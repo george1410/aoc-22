@@ -1,7 +1,7 @@
 import { Day, Solution } from "../types";
-import day1 from "./1";
-import day2 from "./2";
-import day3 from "./3";
+import day1 from "./01";
+import day2 from "./02";
+import day3 from "./03";
 
 export default {
   "1": day1,

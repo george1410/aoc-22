@@ -25,12 +25,13 @@ const day = process.argv[2] as Day;
 
   console.log("creating files...");
 
-  fs.writeFileSync(path.join(process.cwd(), "inputs", "999"), data);
+  const paddedDay = Number(day) < 10 ? `0${day}` : day;
+  fs.writeFileSync(path.join(process.cwd(), "inputs", paddedDay), data);
 
-  fs.mkdirSync(path.join(process.cwd(), "src", "days", "999"));
-  fs.mkdirSync(path.join(process.cwd(), "src", "days", "999", "fixtures"));
+  fs.mkdirSync(path.join(process.cwd(), "src", "days", paddedDay));
+  fs.mkdirSync(path.join(process.cwd(), "src", "days", paddedDay, "fixtures"));
   fs.writeFileSync(
-    path.join(process.cwd(), "src", "days", "999", "fixtures", "testInput"),
+    path.join(process.cwd(), "src", "days", paddedDay, "fixtures", "testInput"),
     ""
   );
 
@@ -39,7 +40,7 @@ const day = process.argv[2] as Day;
     .toString();
 
   fs.writeFileSync(
-    path.join(process.cwd(), "src", "days", "999", "index.ts"),
+    path.join(process.cwd(), "src", "days", paddedDay, "index.ts"),
     src
   );
 
@@ -50,7 +51,7 @@ const day = process.argv[2] as Day;
   test.replace(/<% .* %>/g, day);
 
   fs.writeFileSync(
-    path.join(process.cwd(), "src", "days", "999", `${day}.test.ts`),
+    path.join(process.cwd(), "src", "days", paddedDay, `${day}.test.ts`),
     test
   );
 
