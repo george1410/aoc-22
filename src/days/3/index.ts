@@ -19,17 +19,13 @@ const solution: Solution = (input) => {
     drop(len(rucksack) / 2, rucksack),
   ]);
 
-  const bothCompartments = compartments.flatMap(([xs, ys]) =>
-    head(common(xs, ys))
-  );
+  const bothCompartments = compartments.map(([xs, ys]) => head(common(xs, ys)));
 
   const priorities = bothCompartments.map(priority);
 
   const groups = chunk(3, rucksacks);
 
-  const allThree = groups.flatMap(([[...xs], [...ys], [...zs]]) =>
-    head(common(common(xs, ys), zs))
-  );
+  const allThree = groups.map(([xs, ys, zs]) => head(common(xs, ys, zs)));
 
   const allThreePriorities = allThree.map(priority);
 

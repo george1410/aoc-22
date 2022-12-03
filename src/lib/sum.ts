@@ -1,1 +1,1 @@
-export default (xs: number[]) => xs.reduce((acc, cur) => acc + cur);
+export default (xs: number[]) => xs.reduce((acc, cur) => acc + cur, 0);

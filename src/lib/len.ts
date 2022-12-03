@@ -1,1 +1,1 @@
-export default (xs: any[]) => xs.length;
+export default (xs: Iterable<any>) => [...xs].length;

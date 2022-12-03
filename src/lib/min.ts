@@ -1,1 +1,1 @@
-export default (xs: number[]) => Math.min(...xs);
+export default (xs: Iterable<number>) => Math.min(...xs);
