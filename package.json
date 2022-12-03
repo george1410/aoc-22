@@ -6,12 +6,15 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "aoc": "ts-node src/index.ts"
+    "aoc": "ts-node src/index.ts",
+    "generate": "ts-node src/generate.ts"
   },
   "author": "George McCarron <hello@georgemccarron.com> (https://www.georgemccarron.com/)",
   "license": "UNLICENSED",
   "devDependencies": {
     "@types/jest": "29.2.3",
+    "axios": "1.2.0",
+    "dotenv": "16.0.3",
     "jest": "29.3.1",
     "ts-jest": "29.0.3",
     "ts-node": "10.9.1",

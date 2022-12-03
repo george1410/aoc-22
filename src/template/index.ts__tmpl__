@@ -1,0 +1,8 @@
+import { Solution } from "../../types";
+
+
+const solution: Solution = (input) => {
+  return [-1, -1];
+};
+
+export default solution;

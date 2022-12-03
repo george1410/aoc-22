@@ -8,16 +8,16 @@ const input = fs
   .toString()
   .trim();
 
-describe("day1", () => {
+describe("day<% day %>", () => {
   it("returns correct solution for part 1", () => {
     const [part1] = solution(input);
 
-    expect(part1).toEqual(24000);
+    expect(part1).toEqual(-1);
   });
 
   it("returns correct solution for part 2", () => {
     const [, part2] = solution(input);
 
-    expect(part2).toEqual(45000);
+    expect(part2).toEqual(-1);
   });
 });
