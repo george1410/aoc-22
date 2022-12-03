@@ -9,7 +9,8 @@ const day = process.argv[2] as Day;
 const runDay = (day: Day) => {
   const input = fs
     .readFileSync(path.join(process.cwd(), "inputs", day))
-    .toString();
+    .toString()
+    .trim();
 
   const output = days[day](input);
 

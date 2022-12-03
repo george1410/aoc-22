@@ -3,7 +3,7 @@ export type Solution = (input: string) => [Result, Result];
 
 export const daysOfAoc = [
   "1",
-  //   "2",
+  "2",
   //   "3",
   //   "4",
   //   "5",
