@@ -13,7 +13,7 @@ const solution: Solution = (input) => {
         const [start, end] = elfRange.split("-").map(Number);
         return range(start, end + 1);
       })
-    );
+    ) as [number[], number[]][];
 
   const inBoth = pairs.map(([a, b]) => common(a, b));
 
