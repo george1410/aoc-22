@@ -1,4 +1,5 @@
 import drop from "./drop";
+import head from "./head";
 import unique from "./unique";
 
 const common = <T>(
@@ -9,7 +10,7 @@ const common = <T>(
   if (rest.length === 0)
     return unique([...xs].filter((x) => [...ys].includes(x)));
 
-  return common(common(xs, ys), rest[0], ...drop(1, rest));
+  return common(common(xs, ys), head(rest), ...drop(1, rest));
 };
 
 export default common;
