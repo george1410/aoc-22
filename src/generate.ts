@@ -26,7 +26,7 @@ const day = process.argv[2] as Day;
   console.log("creating files...");
 
   const paddedDay = Number(day) < 10 ? `0${day}` : day;
-  fs.writeFileSync(path.join(process.cwd(), "inputs", paddedDay), data);
+  fs.writeFileSync(path.join(process.cwd(), "inputs", day), data);
 
   fs.mkdirSync(path.join(process.cwd(), "src", "days", paddedDay));
   fs.mkdirSync(path.join(process.cwd(), "src", "days", paddedDay, "fixtures"));
@@ -48,11 +48,11 @@ const day = process.argv[2] as Day;
     .readFileSync(path.join(__dirname, "template", "{day}.test.ts__tmpl__"))
     .toString();
 
-  test.replace(/<% .* %>/g, day);
+  const replacedTest = test.replace(/<% .*? %>/, day);
 
   fs.writeFileSync(
     path.join(process.cwd(), "src", "days", paddedDay, `${day}.test.ts`),
-    test
+    replacedTest
   );
 
   console.log("created files successfully!");
