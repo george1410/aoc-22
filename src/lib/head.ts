@@ -1,1 +1,1 @@
-export default <T>(xs: T[]) => xs[0];
+export default <T>([x]: T[]) => x;

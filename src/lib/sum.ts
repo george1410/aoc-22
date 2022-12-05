@@ -1,1 +1,3 @@
-export default (xs: number[]) => xs.reduce((acc, cur) => acc + cur, 0);
+import add from "./add";
+
+export default (xs: number[]) => xs.reduce(add, 0);

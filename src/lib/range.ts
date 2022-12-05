@@ -1,2 +1,2 @@
-export default (start: number, end: number) =>
-  [...Array(end - start).keys()].map((x) => x + start);
+export default (start: number, end: number, step = 1) =>
+  [...Array((end - start) / step).keys()].map((x) => x * step + start);

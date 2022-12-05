@@ -8,4 +8,8 @@ describe("range", () => {
   it("works when start value is not 0", () => {
     expect(range(5, 10)).toEqual([5, 6, 7, 8, 9]);
   });
+
+  it("works when step is set", () => {
+    expect(range(0, 10, 2)).toEqual([0, 2, 4, 6, 8]);
+  });
 });
