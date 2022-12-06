@@ -12,4 +12,8 @@ describe("take", () => {
   it("returns and empty array if passed an empty array", () => {
     expect(take(2, [])).toEqual([]);
   });
+
+  it("works on other iterables", () => {
+    expect(take(2, "abcde")).toEqual(["a", "b"]);
+  });
 });

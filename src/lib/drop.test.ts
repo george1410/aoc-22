@@ -12,4 +12,8 @@ describe("drop", () => {
   it("returns an empty array if the count to remove is greater than the number of elements", () => {
     expect(drop(6, [1, 2, 3, 4, 5])).toEqual([]);
   });
+
+  it("works on other iterables", () => {
+    expect(drop(1, "abcde")).toEqual(["b", "c", "d", "e"]);
+  });
 });

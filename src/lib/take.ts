@@ -1,1 +1,1 @@
-export default <T>(count: number, xs: T[]) => xs.slice(0, count);
+export default <T>(count: number, xs: Iterable<T>) => [...xs].slice(0, count);
