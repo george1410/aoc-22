@@ -4,14 +4,14 @@ import len from "../../lib/len";
 import take from "../../lib/take";
 import unique from "../../lib/unique";
 
-const findPos = (arr: string[], count: number, pos = count): number => {
-  if (len(unique(take(count, arr))) === count) return pos;
+const findPos = (arr: string[], count: number, pos = count): number =>
+  len(unique(take(count, arr))) === count
+    ? pos
+    : findPos(drop(1, arr), count, pos + 1);
 
-  return findPos(drop(1, arr), count, pos + 1);
-};
-
-const solution: Solution = ([...input]) => {
-  return [findPos(input, 4), findPos(input, 14)];
-};
+const solution: Solution = ([...input]) => [
+  findPos(input, 4),
+  findPos(input, 14),
+];
 
 export default solution;
