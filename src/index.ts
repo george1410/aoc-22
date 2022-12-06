@@ -10,7 +10,7 @@ const runDay = (day: Day) => {
   const input = fs
     .readFileSync(path.join(process.cwd(), "inputs", day))
     .toString()
-    .trim();
+    .trimEnd();
 
   const output = days[day](input);
 
